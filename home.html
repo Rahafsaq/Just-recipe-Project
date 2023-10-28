@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>بس وصفة</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+		<style>
+			.logo-img {
+				width: 14vw;
+			}
+			.circle-1 {
+				background-color: #799d53;
+				width: 15vw;
+				height: 6vh;
+				color: white;
+				flex-direction: row-reverse;
+				text-align: center;
+				justify-content: end;
+				border-radius: 20px;
+				margin-right: 10px;
+			}
+			.selection-circles {
+				justify-content: end;
+				align-items: center;
+				gap: 8px;
+				/* margin-right: 8px; */
+				background-color: #e8e8e4;
+				width: 65vw;
+				height: 20vh;
+			}
+			.component-section {
+				flex-direction: row-reverse;
+				gap: 50px;
+				width: 96%;
+			}
+			.btn {
+				height: 20vh;
+				width: 12vw;
+				background-color: #e8e8e4;
+				color: #547361;
+				border-radius: 0%;
+				border: none;
+				direction: rtl;
+				font-size: 20px;
+			}
+			.change-width {
+				/* background-color: aqua; */
+				width: 8vw;
+				display: flex;
+				flex-direction: row-reverse;
+				justify-content: space-between;
+				margin-right: 10px;
+			}
+			.dropdown-menu {
+				background-color: #d9d9d9;
+				text-align: center;
+				border: 1px solid #547361;
+			}
+			.dropdown-item {
+				border: 1px solid #547361;
+				color: #547361;
+			}
+			.dropdown-green-item {
+				justify-content: center;
+				flex-direction: row-reverse;
+				border: 1px solid #547361;
+				color: #547361;
+				background-color: #799d53;
+				color: white;
+			}
+			hr {
+				border: 1px solid black;
+			}
+			.last-3-buttons-container {
+				display: flex;
+				flex-direction: row-reverse;
+				justify-content: center;
+			}
+			.last-3-buttons {
+				gap: 80px;
+				justify-content: center;
+				flex-direction: row-reverse;
+				align-items: center;
+				height: 25vh;
+			}
+			.btn-3 {
+				height: 10vh;
+				width: 15vw;
+				background-color: #e8e8e4;
+				color: #547361;
+				border-radius: 0%;
+				border: none;
+				direction: rtl;
+				font-size: 20px;
+				display: flex;
+				flex-direction: row-reverse;
+				justify-content: center;
+				align-items: center;
+				gap: 5px;
+			}
+			.button-make-recipe {
+				display: flex;
+				justify-content: center;
+			}
+			.button-make-recipe-circle {
+				background-color: #8d3333;
+				width: 20vw;
+				height: 7vh;
+				color: white;
+				flex-direction: row-reverse;
+				text-align: center;
+				justify-content: end;
+				border-radius: 20px;
+				border: none;
+				margin-bottom: 30px;
+				font-size: 20px;
+			}
+			.material-symbols-outlined-fire {
+				color: orange;
+			}
+			.material-symbols-outlined-snow {
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"
+		></script>
+		<div class="logo-img-container d-flex justify-content-between ms-3" style="height: 20vh; width: 100%">
+			<img class="logo-img" src="images\logo.png" alt="" />
+			<img class="logo-img" src="images\yellow.png" alt="" />
+		</div>
+
+		<h5 class="top-h5 mt-5 pe-5" style="text-align: end; color: #547361">:اختر المكونات التي تفضلها</h5>
+
+		<div class="component-section d-flex mt-5">
+			<div class="dropdown">
+				<button
+					class="btn btn-secondary dropdown-toggle"
+					type="button"
+					data-bs-toggle="dropdown"
+					aria-expanded="false"
+				>
+					خضروات
+				</button>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="#">خس</a></li>
+					<li>
+						<a class="dropdown-item" href="#">طماطم</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="#">خيار</a>
+					</li>
+					<li><a class="dropdown-item" href="#">جزر</a></li>
+					<li>
+						<a class="dropdown-green-item d-flex" href="#"><i class="material-icons">add</i>اخرى</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<div class="selection-cercel">
+					<div class="selection-circles d-flex">
+						<div class="circle-1 d-flex">
+							<div class="change-width"><i class="material-icons">clear</i>خس</div>
+						</div>
+						<div class="circle-1 d-flex">
+							<div class="change-width"><i class="material-icons">clear</i>طماطم</div>
+						</div>
+						<div class="circle-1 d-flex">
+							<div class="change-width"><i class="material-icons">clear</i>خيار</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="component-section d-flex mt-5">
+			<div class="dropdown">
+				<button
+					class="btn btn-secondary dropdown-toggle"
+					type="button"
+					data-bs-toggle="dropdown"
+					aria-expanded="false"
+				>
+					نشويات
+				</button>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="#">رز</a></li>
+					<li>
+						<a class="dropdown-item" href="#">مكرونة</a>
+					</li>
+					<li><a class="dropdown-item" href="#">خبز</a></li>
+					<li>
+						<a class="dropdown-green-item d-flex" href="#"><i class="material-icons">add</i>اخرى</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<div class="selection-cercel">
+					<div class="selection-circles d-flex">
+						<div class="circle-1 d-flex">
+							<div class="change-width"><i class="material-icons">clear</i>رز</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="component-section d-flex mt-5">
+			<div class="dropdown">
+				<button
+					class="btn btn-secondary dropdown-toggle"
+					type="button"
+					data-bs-toggle="dropdown"
+					aria-expanded="false"
+				>
+					فواكة
+				</button>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="#">عنب</a></li>
+					<li>
+						<a class="dropdown-item" href="#">تفاح</a>
+					</li>
+					<li><a class="dropdown-item" href="#">موز</a></li>
+					<li><a class="dropdown-item" href="#">توت</a></li>
+
+					<li>
+						<a class="dropdown-green-item d-flex" href="#"><i class="material-icons">add</i>اخرى</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<div class="selection-cercel">
+					<div class="selection-circles d-flex">
+						<div class="circle-1 d-flex">
+							<div class="change-width"><i class="material-icons">clear</i>عنب</div>
+						</div>
+						<div class="circle-1 d-flex">
+							<div class="change-width"><i class="material-icons">clear</i>تفاح</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="component-section d-flex mt-5">
+			<div class="dropdown">
+				<button
+					class="btn btn-secondary dropdown-toggle"
+					type="button"
+					data-bs-toggle="dropdown"
+					aria-expanded="false"
+				>
+					بقوليات
+				</button>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="#">عدس</a></li>
+					<li>
+						<a class="dropdown-item" href="#">فول</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="#">فاصوليا</a>
+					</li>
+					<li><a class="dropdown-item" href="#">حمص</a></li>
+
+					<li>
+						<a class="dropdown-green-item d-flex" href="#"><i class="material-icons">add</i>اخرى</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<div class="selection-cercel">
+					<div class="selection-circles d-flex">
+						<div class="circle-1 d-flex">
+							<div class="change-width"><i class="material-icons">clear</i>عدس</div>
+						</div>
+						<div class="circle-1 d-flex">
+							<div class="change-width"><i class="material-icons">clear</i>حمص</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="component-section d-flex mt-5">
+			<div class="dropdown">
+				<button
+					class="btn btn-secondary dropdown-toggle"
+					type="button"
+					data-bs-toggle="dropdown"
+					aria-expanded="false"
+				>
+					بروتينات
+				</button>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="#">لحم</a></li>
+					<li>
+						<a class="dropdown-item" href="#">دجاج</a>
+					</li>
+					<li><a class="dropdown-item" href="#">سمك</a></li>
+					<li><a class="dropdown-item" href="#">بيض</a></li>
+
+					<li>
+						<a class="dropdown-green-item d-flex" href="#"><i class="material-icons">add</i>اخرى</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<div class="selection-cercel">
+					<div class="selection-circles d-flex">
+						<div class="circle-1 d-flex">
+							<div class="change-width"><i class="material-icons">clear</i>دجاج</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr />
+		<h5 class="top-h5 mt-5 pe-5" style="text-align: end; color: #547361">هل تريد ان تكون الوصفة</h5>
+		<div class="last-3-buttons-container">
+			<div class="last-3-buttons d-flex">
+				<button type="button" class="btn-3">
+					<i class="material-icons"
+						><span class="material-symbols-outlined-fire"> local_fire_department </span></i
+					>ساخنة
+				</button>
+				<button type="button" class="btn-3">
+					<i class="material-icons"
+						><span class="material-symbols-outlined">
+							<span class="material-symbols-outlined-snow"> ac_unit </span>
+						</span></i
+					>باردة
+				</button>
+				<button type="button" class="btn-3">الكل</button>
+			</div>
+		</div>
+
+		<div class="button-make-recipe">
+			<a href="result.html"><button class="button-make-recipe-circle" type="button">اصنع لي وصفة</button> </a>
+		</div>
+	</body>
+</html>
