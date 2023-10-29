@@ -1,0 +1,36 @@
+.homepageimg{
+    text-align: center;
+}
+.homepageimg p{
+    font-size: xx-large;
+    color: #547361;
+}
+.button-make-recipe-circle {
+    background-color: #8d3333;
+    width: 20vw;
+    height: 7vh;
+    color: white;
+    flex-direction: row-reverse;
+    text-align: center;
+    justify-content: end;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+.button-make-recipe {
+    display: flex;
+    justify-content: center;
+}
+nav{
+    text-align: left;
+}
+.page3h1{
+    text-align: center;
+    color: #547361;
+    font-size: larger;
+}
+.card mb-4{
+    width: 100px;
+    height: 150px;
+}
