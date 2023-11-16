@@ -23,6 +23,7 @@
 				flex-direction: row-reverse;
 				text-align: center;
 				justify-content: end;
+                align-items: center;
 				border-radius: 20px;
 				margin-right: 10px;
 			}
@@ -153,7 +154,7 @@
 				>
 					خضروات
 				</button>
-				<ul class="dropdown-menu">
+				<ul class="dropdown-menu" id="vegetables-list">
 					<li><a class="dropdown-item" href="#">خس</a></li>
 					<li>
 						<a class="dropdown-item" href="#">طماطم</a>
@@ -163,26 +164,22 @@
 					</li>
 					<li><a class="dropdown-item" href="#">جزر</a></li>
 					<li>
-						<a class="dropdown-green-item d-flex" href="#"><i class="material-icons">add</i>اخرى</a>
+						<!-- <input type="text" placeholder="اخرى" /> -->
+                        <input type="text" placeholder="اخرى" id="vegetables-other-input" />
+                        <button class="add-button" onclick="addItem('vegetables-list', 'vegetables-other-input', 'vegetables-selections')">إضافة</button>
+						
 					</li>
 				</ul>
 			</div>
 			<div>
 				<div class="selection-cercel">
-					<div class="selection-circles d-flex">
-						<div class="circle-1 d-flex">
-							<div class="change-width"><i class="material-icons">clear</i>خس</div>
-						</div>
-						<div class="circle-1 d-flex">
-							<div class="change-width"><i class="material-icons">clear</i>طماطم</div>
-						</div>
-						<div class="circle-1 d-flex">
-							<div class="change-width"><i class="material-icons">clear</i>خيار</div>
+					<div class="selection-circles d-flex" id="vegetables-selections">
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+        <!--  -->
 		<div class="component-section d-flex mt-5">
 			<div class="dropdown">
 				<button
@@ -193,27 +190,29 @@
 				>
 					نشويات
 				</button>
-				<ul class="dropdown-menu">
+				<ul class="dropdown-menu" id="starches-list">
 					<li><a class="dropdown-item" href="#">رز</a></li>
 					<li>
 						<a class="dropdown-item" href="#">مكرونة</a>
 					</li>
-					<li><a class="dropdown-item" href="#">خبز</a></li>
 					<li>
-						<a class="dropdown-green-item d-flex" href="#"><i class="material-icons">add</i>اخرى</a>
+						<a class="dropdown-item" href="#">خبز</a>
+					</li>
+					<li>
+                        <input type="text" placeholder="اخرى" id="starches-other-input" />
+                        <button class="add-button" onclick="addItem('starches-list', 'starches-other-input', 'starches-selections')">إضافة</button>
+						
 					</li>
 				</ul>
 			</div>
 			<div>
 				<div class="selection-cercel">
-					<div class="selection-circles d-flex">
-						<div class="circle-1 d-flex">
-							<div class="change-width"><i class="material-icons">clear</i>رز</div>
-						</div>
+					<div class="selection-circles d-flex" id="starches-selections">
 					</div>
 				</div>
 			</div>
 		</div>
+
 		<div class="component-section d-flex mt-5">
 			<div class="dropdown">
 				<button
@@ -224,7 +223,7 @@
 				>
 					فواكة
 				</button>
-				<ul class="dropdown-menu">
+				<ul class="dropdown-menu" id="fruit-list">
 					<li><a class="dropdown-item" href="#">عنب</a></li>
 					<li>
 						<a class="dropdown-item" href="#">تفاح</a>
@@ -233,19 +232,15 @@
 					<li><a class="dropdown-item" href="#">توت</a></li>
 
 					<li>
-						<a class="dropdown-green-item d-flex" href="#"><i class="material-icons">add</i>اخرى</a>
+						<input type="text" placeholder="اخرى" id="fruit-other-input" />
+						<button class="add-button" onclick="addItem('fruit-list', 'fruit-other-input', 'fruit-selections')">إضافة</button>
+                        
 					</li>
 				</ul>
 			</div>
 			<div>
 				<div class="selection-cercel">
-					<div class="selection-circles d-flex">
-						<div class="circle-1 d-flex">
-							<div class="change-width"><i class="material-icons">clear</i>عنب</div>
-						</div>
-						<div class="circle-1 d-flex">
-							<div class="change-width"><i class="material-icons">clear</i>تفاح</div>
-						</div>
+					<div class="selection-circles d-flex" id="fruit-selections">
 					</div>
 				</div>
 			</div>
@@ -260,7 +255,7 @@
 				>
 					بقوليات
 				</button>
-				<ul class="dropdown-menu">
+				<ul class="dropdown-menu" id="legumes-list">
 					<li><a class="dropdown-item" href="#">عدس</a></li>
 					<li>
 						<a class="dropdown-item" href="#">فول</a>
@@ -271,19 +266,14 @@
 					<li><a class="dropdown-item" href="#">حمص</a></li>
 
 					<li>
-						<a class="dropdown-green-item d-flex" href="#"><i class="material-icons">add</i>اخرى</a>
+						<input type="text" placeholder=" اخرى" id="legumes-other-input" />
+						<button class="add-button" onclick="addItem('legumes-list', 'legumes-other-input', 'legumes-selections')">إضافة</button>
 					</li>
 				</ul>
 			</div>
 			<div>
 				<div class="selection-cercel">
-					<div class="selection-circles d-flex">
-						<div class="circle-1 d-flex">
-							<div class="change-width"><i class="material-icons">clear</i>عدس</div>
-						</div>
-						<div class="circle-1 d-flex">
-							<div class="change-width"><i class="material-icons">clear</i>حمص</div>
-						</div>
+					<div class="selection-circles d-flex" id="legumes-selections">
 					</div>
 				</div>
 			</div>
@@ -298,7 +288,7 @@
 				>
 					بروتينات
 				</button>
-				<ul class="dropdown-menu">
+				<ul class="dropdown-menu" id="proteins-list">
 					<li><a class="dropdown-item" href="#">لحم</a></li>
 					<li>
 						<a class="dropdown-item" href="#">دجاج</a>
@@ -307,16 +297,20 @@
 					<li><a class="dropdown-item" href="#">بيض</a></li>
 
 					<li>
-						<a class="dropdown-green-item d-flex" href="#"><i class="material-icons">add</i>اخرى</a>
+						<input type="text" placeholder=" اخرى" id="proteins-other-input" />
+						<button class="add-button" onclick="addItem('proteins-list', 'proteins-other-input', 'proteins-selections')">إضافة</button>
+					  
+
+						<!-- <a class="dropdown-green-item d-flex" href="#"><i class="material-icons">add</i>اخرى</a> -->
 					</li>
 				</ul>
 			</div>
 			<div>
 				<div class="selection-cercel">
-					<div class="selection-circles d-flex">
-						<div class="circle-1 d-flex">
+					<div class="selection-circles d-flex" id="proteins-selections">
+						<!-- <div class="circle-1 d-flex">
 							<div class="change-width"><i class="material-icons">clear</i>دجاج</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -342,7 +336,114 @@
 		</div>
 
 		<div class="button-make-recipe">
-			<a href="result.html"><button class="button-make-recipe-circle" type="button">اصنع لي وصفة</button> </a>
+			<a href=""><button id="makeRecipeButton" class="button-make-recipe-circle" type="button" onclick="makeRecipe()">اصنع لي وصفة</button> </a>
 		</div>
+		<script>
+			function addItem(listId, inputId, circlesId) {
+			  var list = document.getElementById(listId);
+			  var input = document.getElementById(inputId);
+			  var circles = document.getElementById(circlesId);
+		
+			  if (input.value.trim() !== '') {
+				// Create a circle element for the entered item
+				var circle = document.createElement('div');
+				circle.className = 'circle-1 d-flex';
+				circle.innerHTML =
+				  '<div class="change-width"><i class="material-icons delete-icon">clear</i>' +
+				  input.value +
+				  '</div>';
+		
+				// Add the circle to the circles container
+				circles.appendChild(circle);
+		
+				// Clear the input
+				input.value = '';
+		
+				// Send data to MockAPI
+				sendDataToMockAPI(circlesId);
+			  }
+			}
+		
+			function sendDataToMockAPI(circlesId) {
+			  var circles = document.getElementById(circlesId);
+			  var items = Array.from(circles.children).map(function (circle) {
+				return circle.textContent.trim();
+			  });
+		
+			  // Send a POST request to the MockAPI endpoint
+			  fetch('https://655634ee84b36e3a431f57d3.mockapi.io/recipe-info', {
+				method: 'POST',
+				headers: {
+				  'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ items: items }),
+			  })
+				.then(response => response.json())
+				.then(data => console.log('Data sent to MockAPI:', data))
+				.catch(error => console.error('Error sending data to MockAPI:', error));
+			}
+		
+			document.addEventListener('DOMContentLoaded', function () {
+			  // Function to handle changes in the dropdowns
+			  function handleDropdownChange(listId, circlesId) {
+				var list = document.getElementById(listId);
+				var circles = document.getElementById(circlesId);
+		
+				list.addEventListener('click', function (event) {
+				  var target = event.target;
+		
+				  if (target.classList.contains('dropdown-item')) {
+					// Create a circle element for the selected item
+					var circle = document.createElement('div');
+					circle.className = 'circle-1 d-flex';
+					circle.innerHTML =
+					  '<div class="change-width"><i class="material-icons delete-icon">clear</i>' +
+					  target.innerText +
+					  '</div>';
+		
+					// Add the circle to the circles container
+					circles.appendChild(circle);
+		
+					// Send data to MockAPI
+					sendDataToMockAPI(circlesId);
+				  }
+				});
+			  }
+		
+			  // Function to handle deleting circles
+			  function handleCircleDeletion(circlesId) {
+				var circles = document.getElementById(circlesId);
+		
+				circles.addEventListener('click', function (event) {
+				  var target = event.target;
+		
+				  if (target.classList.contains('delete-icon')) {
+					// Remove the parent circle when the delete icon is clicked
+					var circle = target.closest('.circle-1');
+					if (circle) {
+					  circle.remove();
+		
+					  // Send data to MockAPI after deletion
+					  sendDataToMockAPI(circlesId);
+					}
+				  }
+				});
+			  }
+		
+			  // Attach event listeners for each dropdown and circle container
+			  handleDropdownChange('vegetables-list', 'vegetables-selections');
+			  handleDropdownChange('starches-list', 'starches-selections');
+			  handleDropdownChange('fruit-list', 'fruit-selections');
+			  handleDropdownChange('legumes-list', 'legumes-selections');
+			  handleDropdownChange('proteins-list', 'proteins-selections');
+		
+			  // Attach event listener for circle deletion
+			  handleCircleDeletion('vegetables-selections');
+			  handleCircleDeletion('starches-selections');
+			  handleCircleDeletion('fruit-selections');
+			  handleCircleDeletion('legumes-selections');
+			  handleCircleDeletion('proteins-selections');
+			});
+		  </script>
 	</body>
 </html>
