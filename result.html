@@ -29,142 +29,19 @@
 		<!--navbar-->
 		<h1 class="page3h1">يمكنك الان الاستمتاع بالوصفات المقدمة لك حسب مكوناتك</h1>
 		<!-- Card deck -->
-		<div class="card-deck">
-			<!-- Card -->
-			<div class="card mb-4" style="height: 160vh">
-				<!--Card image-->
-				<!--Title-->
-				<div class="title-center d-flex" style="height: 20vh; align-items: end; justify-content: center">
-					<h5 class="card-title" style="color: #547361; text-align: center">الوصفة الاولى</h5>
-				</div>
-				<div class="view overlay d-flex" style="justify-content: center; height: 90vh; align-items: end">
-					<img
-						style="width: 70%; height: 70vh"
-						class="card-img-top"
-						src="https://luxuryav.net/image/catalog/mdwnh/Gnral/2021/Mac03/Faucets/uae_desktop_slider_home.jpg"
-						alt="Card image cap"
-					/>
-					<a href="#!">
-						<div class="mask rgba-white-slight"></div>
-					</a>
-				</div>
-
-				<!--Card content-->
-				<div class="card-body">
-					<!-- ظ					Title
-					<h4 class="card-title" style="color: #547361">الوصفة الاولى</h4> -->
-					<!--Text-->
-					<div class="fix-place d-flex" style="justify-content: center">
-						<div
-							class="img-text-container d-flex"
-							style="
-								/* background-color: #547361; */
-								justify-content: center;
-								width: 72%;
-								justify-content: space-between;
-							"
-						>
-							<img src="images\img2.jpg" class="rounded float-right" style="height: 60vh" alt="..." />
-							<img src="images\img1.jpg" class="rounded float-left" style="height: 60vh" alt="..." />
-						</div>
-					</div>
-				</div>
+		<div id="main-container">
+			<div id="main-content">
+				<input id="word-input" type="text" placeholder="اسأل..">
+				<button id="submit-btn">إرسال</button>
 			</div>
-			<!-- Card -->
-
-			<!-- Card -->
-			<div class="card mb-4" style="height: 160vh">
-				<!--Card image-->
-				<!--Title-->
-				<div class="title-center d-flex" style="height: 20vh; align-items: end; justify-content: center">
-					<h5 class="card-title" style="color: #547361; text-align: center">الوصفة الثانية</h5>
-				</div>
-				<div class="view overlay d-flex" style="justify-content: center; height: 90vh; align-items: end">
-					<img
-						style="width: 70%; height: 70vh"
-						class="card-img-top"
-						src="https://img-global.cpcdn.com/recipes/b612b9ff1e7a3ebc/1200x630cq70/photo.jpg"
-						alt="Card image cap"
-					/>
-					<a href="#!">
-						<div class="mask rgba-white-slight"></div>
-					</a>
-				</div>
-
-				<!--Card content-->
-				<div class="card-body">
-					<!-- Title
-					<h4 class="card-title" style="color: #547361">الوصفة الثانيه</h4> -->
-					<!--Text-->
-					<div class="fix-place d-flex" style="justify-content: center">
-						<div
-							class="img-text-container d-flex"
-							style="
-								/* background-color: #547361; */
-								justify-content: center;
-								width: 72%;
-								justify-content: space-between;
-							"
-						>
-							<img src="images\img2.jpg" class="rounded float-right" style="height: 60vh" alt="..." />
-							<img src="images\img1.jpg" class="rounded float-left" style="height: 60vh" alt="..." />
-						</div>
-					</div>
-				</div>
+	
+			<div id="reply-content">
 			</div>
-			<!-- Card -->
-
-			<!-- Card -->
-			<div class="card mb-4" style="height: 160vh">
-				<!--Card image-->
-				<!--Title-->
-				<div class="title-center d-flex" style="height: 20vh; align-items: end; justify-content: center">
-					<h5 class="card-title" style="color: #547361; text-align: center">الوصفة الثالثة</h5>
-				</div>
-
-				<!-- ---- -->
-				<div class="view overlay d-flex" style="justify-content: center; height: 90vh; align-items: end">
-					<img
-						style="width: 70%; height: 70vh"
-						class="card-img-top"
-						src="https://img-global.cpcdn.com/recipes/f4e3301fb906cf4a/1200x630cq70/photo.jpg"
-						alt="Card image cap"
-					/>
-					<a href="#!">
-						<div class="mask rgba-white-slight"></div>
-					</a>
-				</div>
-
-				<!--Card content-->
-				<div class="card-body">
-					<!--Text-->
-					<div class="fix-place d-flex" style="justify-content: center">
-						<div
-							class="img-text-container d-flex"
-							style="
-								/* background-color: #547361; */
-								justify-content: center;
-								width: 72%;
-								justify-content: space-between;
-							"
-						>
-							<img src="images\img2.jpg" class="rounded float-right" style="height: 60vh" alt="..." />
-							<img src="images\img1.jpg" class="rounded float-left" style="height: 60vh" alt="..." />
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Card -->
-		</div>
-		<!-- Card deck -->
-		<div class="logo-img-container d-flex justify-content-end ms-3">
-			<a href="home.html"
-				><button type="button" style="border: none; color: #8d3333; background-color: white; font-size: 20px">
-					العودة للخلف
-				</button></a
-			>
+			
+			
 		</div>
 	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
 	<script>
 		//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
 		document.getElementById("submit-btn").addEventListener("click", function () {
@@ -177,7 +54,7 @@ function sendToChatGPT() {
   let value = document.getElementById("word-input").value;
 
   let body = {
-    model: "gpt-3.5-turbo",
+    model: "gpt-4-1106-preview",
     messages: [{ role: "user", content: value }],
     tempreture: "1",
   };
