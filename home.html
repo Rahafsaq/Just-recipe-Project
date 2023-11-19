@@ -143,6 +143,16 @@
 				height: 30px;
 				margin-top: 10px;
 			}
+			.delete-button{
+				background-color:#799d53;
+				border: none;
+				border-radius: 20px;
+				color: white;
+				width: 8vw;
+				height: 30px;
+				margin-top: 10px;
+				display: none;
+			}
 			#logoutButton{
 				border-radius: 12px;height: 7vh;;width: 12vw; background-color: #8d3333;color: white;border: none;margin-bottom: 30px;
 			}
@@ -282,6 +292,16 @@
 				height: 30px;
 				margin-top: 10px;
 			}
+			.delete-button{
+				background-color:#799d53;
+				border: none;
+				border-radius: 20px;
+				color: white;
+				width: 15vw;
+				height: 30px;
+				margin-top: 10px;
+				display: none;
+			}
 			#logoutButton{
 				border-radius: 12px;height: 6vh;;width: 25vw; background-color: #8d3333;color: white;border: none;margin-bottom: 30px;
 			}
@@ -348,6 +368,7 @@
 						</div>
 					</div>
 				</div>
+				<button class="delete-button" id="del">حذف</button>
 			</div>
 		</div>
         <!--  -->
@@ -382,6 +403,7 @@
 					</div>
 				</div>
 			</div>
+			<button class="delete-button" id="del">حذف</button>
 		</div>
 
 		<div class="component-section d-flex mt-5">
@@ -415,6 +437,7 @@
 					</div>
 				</div>
 			</div>
+			<button class="delete-button" id="del">حذف</button>
 		</div>
 		<div class="component-section d-flex mt-5">
 			<div class="dropdown">
@@ -448,6 +471,7 @@
 					</div>
 				</div>
 			</div>
+			<button class="delete-button" id="del">حذف</button>
 		</div>
 		<div class="component-section d-flex mt-5">
 			<div class="dropdown">
@@ -485,6 +509,7 @@
 					</div>
 				</div>
 			</div>
+			<button class="delete-button" id="del" >حذف</button>
 		</div>
 		<hr />
 		<h5 class="top-h5 mt-5 pe-5" style="text-align: end; color: #547361">هل تريد ان تكون الوصفة</h5>
@@ -523,6 +548,10 @@
 			// If user is authenticated, display home page
 			let welcomeUser = document.getElementById('welcome-user');
 			welcomeUser.innerText = `اهلا ${userName}`;
+			if(userName==="Admen"){
+	        let del=document.getElementById('del')
+            del.style.display = "block";
+}
 		}
 		function logout() {
         // Remove user authentication information from local storage
@@ -531,6 +560,27 @@
         // Redirect the user to the login page
         window.location.href = 'index.html';
     }
+	//delete function
+	function deleteComponentSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    if (section) {
+        section.remove();
+        // Additional logic or API call for deletion if needed
+    }
+}
+
+// Attach a click event listener to the delete button in each component section
+document.querySelectorAll('.del').forEach(function (del) {
+    del.addEventListener('click', function () {
+        // Get the closest parent with class 'component-section'
+        var componentSection = this.closest('.component-section');
+        if (componentSection) {
+            // Call the delete function with the ID of the component section
+            deleteComponentSection(componentSection.id);
+        }
+    });
+});
+
 
     // Attach a click event listener to the logout button
     document.getElementById('logoutButton').addEventListener('click', logout);
@@ -560,6 +610,7 @@
 			  }
 			}
 		
+			
 			function sendDataToMockAPI(circlesId) {
 			  var circles = document.getElementById(circlesId);
 			  var items = Array.from(circles.children).map(function (circle) {
@@ -653,6 +704,24 @@
 
 			})
 			//makeRecipe
+
+			function makeRecipe(){
+			fetch('https://655634ee84b36e3a431f57d3.mockapi.io/recipe-info')
+             .then((response) => response.json())
+             .then((json) =>{
+				if(json.items=='طماطم'){
+					window.location.href='result2.html'
+				}
+				else if(json.items=='توت'){
+					window.location.href='result.html'
+				}
+				else if(json.items=='عدس'){
+					window.location.href='result3.html'
+				}
+			 })
+             }
+
+
 			// function displayRecipe(){
 			// fetch('https://655634ee84b36e3a431f57d3.mockapi.io/recipe-info')
             //  .then((response) => response.json())
@@ -697,6 +766,7 @@
 
 			}
 			 
+// 8e5acc2c33e29ef3b3242de17de568e50d17dae3
 		  </script>
 
 	</body>
