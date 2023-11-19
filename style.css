@@ -3,24 +3,23 @@
 }
 .homepageimg p{
     font-size: xx-large;
-    color: #547361;
+    color: #466754;
 }
 .button-make-recipe-circle {
     background-color: #8d3333;
-    width: 20vw;
+    width: 15vw;
     height: 7vh;
     color: white;
-    flex-direction: row-reverse;
-    text-align: center;
-    justify-content: end;
     border-radius: 20px;
     border: none;
     margin-bottom: 30px;
-    font-size: 20px;
+    font-size: 18px;
+  
 }
 .button-make-recipe {
     display: flex;
     justify-content: center;
+      gap: 20px;
 }
 nav{
     text-align: left;

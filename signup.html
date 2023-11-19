@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>تسجيل جديد</title>
+		<!-- Font Awesome -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+		<!-- MDB -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" />
+		<style>
+			.cont {
+				display: flex;
+				width: 40vw;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				gap: 20px;
+				padding: 50px;
+				border-radius: 25px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.616);
+				background-color: rgba(255, 255, 255, 0.516);
+			}
+			.inputs {
+				width: 30vw;
+				border-radius: 10px;
+				border: none;
+				height: 7vh;
+				padding-left: 10px;
+			}
+			.wrong-alert {
+				color: red;
+			}
+			.btn {
+				background-color: #8d3333;
+				width: 15vw;
+				height: 7vh;
+				color: white;
+				border-radius: 20px;
+				color: azure;
+				font-size: 18px;
+			}
+			@media (max-width: 600px) {
+				.cont {
+					display: flex;
+					width: 90%;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					gap: 20px;
+					padding: 50px;
+					border-radius: 25px;
+					box-shadow: 0 0 10px rgba(0, 0, 0, 0.616);
+					background-color: rgba(255, 255, 255, 0.516);
+				}
+				.inputs {
+					width: 100%;
+					border-radius: 10px;
+					border: none;
+					height: 6vh;
+					padding-left: 10px;
+				}
+				.btn {
+					background-color: #8d3333;
+					width: 25vw;
+					height: 6vh;
+					color: white;
+					border-radius: 20px;
+					color: azure;
+					font-size: 18px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<!-- Background image -->
+			<div
+				class="p-5 text-center bg-image"
+				style="
+					background-image: url('https://images.pexels.com/photos/6061452/pexels-photo-6061452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+					height: 100vh;
+				"
+			>
+				<div
+					class="mask"
+					style="
+						background-color: rgba(0, 0, 0, 0.333);
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					"
+				>
+					<div class="cont">
+						<h2 style="color: #466754">تسجيل جديد</h2>
+						<input
+							id="name"
+							class="inputs"
+							type="text"
+							placeholder="ادخل الاسم"
+							style="text-align: right"
+						/>
+						<input
+							id="email"
+							class="inputs"
+							type="email"
+							placeholder="ادخل الايميل"
+							style="direction: rtl"
+						/>
+						<input
+							id="password"
+							class="inputs"
+							type="password"
+							placeholder="ادخل كلمة السر"
+							style="direction: rtl"
+						/>
+
+						<div>
+							<button id="btn" class="btn mb-1" type="button">تسجيل</button>
+							<p id="wrong-alert" class="wrong-alert"></p>
+							<p style="color: #466754">
+								لديك حساب بالفعل؟ <a href="Login.html" style="color: white">تسجيل دخول</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Background image -->
+		</header>
+	</body>
+
+	<!-- MDB -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+
+	<script>
+		document.getElementById('btn').addEventListener('click', () => {
+			let name = document.getElementById('name');
+			let email = document.getElementById('email');
+			let password = document.getElementById('password');
+			let wrongAlert = document.getElementById('wrong-alert');
+
+			let nameValid = /^[\u0621-\u064Aa-zA-Z\d\-_\s]+$/;
+			let emailValid = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+			let passwordValid = /^\d{6,}$/;
+
+			if (name.value === '' || email.value === '' || password.value === '') {
+				// wrongAlert.innerText = 'input should not be empty';
+				alert('input should not be empty');
+			} else if (!nameValid.test(name.value)) {
+				// wrongAlert.innerText = 'name is only character and more than 5';
+				alert('name is only character and more than 5');
+			} else if (!email.value.match(emailValid)) {
+				// wrongAlert.innerText = 'email is invalid';
+				alert('email is invalid');
+			} else if (!password.value.match(passwordValid)) {
+				wrongAlert.innerText = 'password is only number and more than 6';
+				// alert('password is only number and more than 6');
+			} else {
+				fetch('https://655634ee84b36e3a431f57d3.mockapi.io/user-info', {
+					method: 'POST',
+					body: JSON.stringify({
+						name: name.value,
+						email: email.value,
+						password: password.value,
+					}),
+					headers: {
+						'Content-type': 'application/json; charset=UTF-8',
+					},
+				})
+					.then((response) => response.json())
+					.then((json) => {
+						console.log('Registration successful. Redirecting to home page.');
+						window.location.href = 'home.html';
+					});
+			}
+		});
+	</script>
+</html>
