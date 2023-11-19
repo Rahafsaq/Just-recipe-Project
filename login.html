@@ -135,8 +135,8 @@
 			let wrongAlert = document.getElementById('wrong-alert');
 
 			if (name.value === '' || password.value === '') {
-				wrongAlert.innerText = 'input should not be empty';
-				// alert('input in empty');
+				// wrongAlert.innerText = 'input should not be empty';
+				alert('input should not be empty');
 			} else {
 				fetch('https://655634ee84b36e3a431f57d3.mockapi.io/user-info')
 					.then((response) => response.json())
@@ -144,8 +144,8 @@
 						let userValid = data.find((d) => name.value === d.name && password.value === d.password);
 
 						if (!userValid) {
-							wrongAlert.innerText = 'name or password is invalid';
-							// alert('name or password is invalid');
+							// wrongAlert.innerText = 'name or password is invalid';
+							alert('invalid name or password');
 						} else {
 							localStorage.setItem('User', name.value);
 							window.location.href = 'home.html';
