@@ -637,6 +637,22 @@
 			  handleCircleDeletion('legumes-selections');
 			  handleCircleDeletion('proteins-selections');
 			});
+			//makeRecipe
+			function makeRecipe(){
+			fetch('https://655634ee84b36e3a431f57d3.mockapi.io/recipe-info')
+             .then((response) => response.json())
+             .then((json) =>{
+				if(json.items=='طماطم'){
+					window.location.href='result2.html'
+				}
+				else if(json.items=='توت'){
+					window.location.href='result.html'
+				}
+				else if(json.items=='عدس'){
+					window.location.href='result3.html'
+				}
+			 })
+             }
 		  </script>
 
 	</body>
