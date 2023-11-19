@@ -507,7 +507,10 @@
 		</div>
 
 		<div class="button-make-recipe">
-			<a href=""><button id="makeRecipeButton" class="button-make-recipe-circle" type="button" onclick="makeRecipe()">اصنع لي وصفة</button> </a>
+			<!-- <a href=""><button id="makeRecipeButton" class="button-make-recipe-circle" type="button" onclick="makeRecipe()">اصنع لي وصفة</button> </a> -->
+			<button id="makeRecipeButton" class="button-make-recipe-circle" type="button" onclick="displayRecipe()">اصنع لي وصفة</button>
+
+
 		</div>
 		<hr>
 		<button id="logoutButton" >تسجيل خروج</button>
@@ -637,22 +640,62 @@
 			  handleCircleDeletion('legumes-selections');
 			  handleCircleDeletion('proteins-selections');
 			});
+
+
+			let showRecipe= document.getElementById('makeRecipeButton')
+			showRecipe.addEventListener('click', ()=>{
+			
+				    // Log a message to ensure that the click event is being triggered
+					console.log('Make Recipe button clicked');
+					
+    // Call the displayRecipe function
+				displayRecipe()	
+
+			})
 			//makeRecipe
-			function makeRecipe(){
-			fetch('https://655634ee84b36e3a431f57d3.mockapi.io/recipe-info')
-             .then((response) => response.json())
-             .then((json) =>{
-				if(json.items=='طماطم'){
-					window.location.href='result2.html'
-				}
-				else if(json.items=='توت'){
-					window.location.href='result.html'
-				}
-				else if(json.items=='عدس'){
-					window.location.href='result3.html'
-				}
-			 })
-             }
+			// function displayRecipe(){
+			// fetch('https://655634ee84b36e3a431f57d3.mockapi.io/recipe-info')
+            //  .then((response) => response.json())
+            //  .then((json) =>{
+			// 	console.log('json.items:', json.items);
+			// 	if(json.items=='طماطم'){
+			// 		window.location.href='result2.html'
+			// 	}
+			// 	else if(json.items=='توت'){
+			// 		window.location.href='result.html'
+			// 	}
+			// 	else if(json.items=='عدس'){
+			// 		window.location.href='result3.html'
+			// 	}
+			//  })
+            //  }
+			function displayRecipe(){
+				fetch('https://655634ee84b36e3a431f57d3.mockapi.io/recipe-info')
+  .then((response) => response.json())
+  .then((json) => {
+    console.log('API Response:', json);
+
+    // Check if the response has the expected structure
+    if (json && Array.isArray(json) && json.length > 0 && json[0].hasOwnProperty('items')) {
+      const actualItems = json[0].items.map(item => item.replace('clear', ''));
+
+      if (actualItems.includes('طماطم')) {
+        window.location.href = 'result2.html';
+      } else if (actualItems.includes('توت')) {
+        window.location.href = 'result.html';
+      } else if (actualItems.includes('عدس')) {
+        window.location.href = 'result3.html';
+      } else {
+        console.error('No matching item found.');
+      }
+    } else {
+      console.error('The API response does not have the expected structure or "items" property.');
+    }
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
+
+			}
 			 
 		  </script>
 
